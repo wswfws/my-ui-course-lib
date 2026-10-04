@@ -1,5 +1,6 @@
 import './App.css';
 import Button from "./button/Button.tsx";
+import TimePicker from "./components/TimePicker.tsx";
 
 function App() {
   return (
@@ -59,6 +60,30 @@ function App() {
         <h3>text / L</h3>
         <Button variant="text" size="L">Кнопка</Button>
         <Button variant="text" size="L" disabled>Кнопка</Button>
+      </section>
+
+      {/* ======================= TIME PICKER ======================= */}
+      <section className="row">
+        <h3>time / S</h3>
+        <TimePicker size="S" label="Начало" defaultValue="09:30" />
+        <TimePicker size="S" label="Конец" disabled />
+      </section>
+
+      <section className="row">
+        <h3>time / M</h3>
+        <TimePicker size="M" label="Начало" defaultValue="09:30" />
+        <TimePicker size="M" label="Конец" disabled />
+      </section>
+
+      <section className="row">
+        <h3>time / L</h3>
+        <TimePicker size="L" label="Начало" defaultValue="09:30" />
+        <TimePicker size="L" label="Конец" disabled />
+      </section>
+
+      <section className="row">
+        <h3>time / без label</h3>
+        <TimePicker size="M" />
       </section>
     </div>
   );
