@@ -13,12 +13,15 @@
     font-style: normal;
     line-height: 20px;
     letter-spacing: -0.1px;
+    box-sizing: border-box;
+    text-decoration: none;
     cursor: pointer;
     user-select: none;
     transition: background-color .15s, opacity .15s, box-shadow .15s;
 }
 
-.button:disabled {
+.button:disabled,
+.button[aria-disabled="true"] {
     cursor: not-allowed;
     opacity: 0.4;
 }
@@ -34,8 +37,8 @@
     color: #FFFFFF;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0784314);
 }
-.fill:hover:not(:disabled)  { background: #2D2D33; }
-.fill:active:not(:disabled) { background: #050506; box-shadow: none; }
+.fill:hover:not(:disabled):not([aria-disabled="true"])  { background: #2D2D33; }
+.fill:active:not(:disabled):not([aria-disabled="true"]) { background: #050506; box-shadow: none; }
 
 /* ===== outline ===== */
 .outline {
@@ -44,12 +47,12 @@
     border: 1px solid #17171B;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.0784314));
 }
-.outline:hover:not(:disabled) {
+.outline:hover:not(:disabled):not([aria-disabled="true"]) {
     background: #F4F4F5;
     filter: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0784314);
 }
-.outline:active:not(:disabled) {
+.outline:active:not(:disabled):not([aria-disabled="true"]) {
     background: #E7E7EA;
     filter: none;
     box-shadow: none;
@@ -61,12 +64,12 @@
     color: #17171B;
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.0784314));
 }
-.text:hover:not(:disabled) {
+.text:hover:not(:disabled):not([aria-disabled="true"]) {
     background: #F4F4F5;
     filter: none;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0784314);
 }
-.text:active:not(:disabled) {
+.text:active:not(:disabled):not([aria-disabled="true"]) {
     background: #E7E7EA;
     filter: none;
     box-shadow: none;

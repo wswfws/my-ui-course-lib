@@ -1,7 +1,11 @@
 import './App.css';
+import {useRef} from "react";
 import Button from "./button/Button.tsx";
 
 function App() {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
+
   return (
     <div className="app">
       {/* ======================= FILL ======================= */}
@@ -59,6 +63,21 @@ function App() {
         <h3>text / L</h3>
         <Button variant="text" size="L">Кнопка</Button>
         <Button variant="text" size="L" disabled>Кнопка</Button>
+      </section>
+
+      {/* ======================= AS LINK + REF ======================= */}
+      <section className="row">
+        <h3>as="a" / ref</h3>
+        <Button as="a" href="#" variant="fill" size="M" ref={linkRef}>Ссылка</Button>
+        <Button as="a" href="#" variant="outline" size="M" disabled>Ссылка</Button>
+        <Button
+          variant="text"
+          size="M"
+          ref={buttonRef}
+          onClick={() => linkRef.current?.focus()}
+        >
+          Фокус на ссылку
+        </Button>
       </section>
     </div>
   );
